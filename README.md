@@ -20,33 +20,20 @@ A serverless function for generating AI ebooks. Used as backend for [Booklyai](h
 - 🏗️ Built with Serverless Framework
 - 🚀 Easy deployment to AWS
 
-## Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/your-repo/bookly-serverless.git
-cd bookly-serverless
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Configure environment variables:
-```bash
-cp .env.example .env
-```
 
 ## Configuration
 
 Edit `.env` file with your settings:
 
 ```env
-AWS_ACCESS_KEY_ID=your_key
-AWS_SECRET_ACCESS_KEY=your_secret
-EMAIL_FROM=your@email.com
-# Other required variables...
+OPENAI_API_KEY =
+AWS_S3_BUCKET_NAME = 
+CUSTOM_AWS_REGION =
+CUSTOM_AWS_ACCESS_KEY_ID = 
+CUSTOM_AWS_SECRET_ACCESS_KEY = 
+MONGODB_URI=
+ZEPTO_MAIL_URL=
+ZEPTO_MAIL_TOKEN
 ```
 
 ## Configuration
