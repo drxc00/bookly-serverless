@@ -1,0 +1,47 @@
+org: ""
+app: ""
+service: ""
+
+custom:
+  clientUrls:
+    dev: "" # Development URL
+    prod: "" # Production URL
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ""
+  stage: ${opt:stage, 'dev'}
+  timeout: 900
+  environment:
+    OPENAI_API_KEY: ${env:OPENAI_API_KEY}
+    AWS_S3_BUCKET_NAME: ${env:AWS_S3_BUCKET_NAME}
+    MONGODB_URI: ${env:MONGODB_URI}
+    SES_ENVIRONMENT: ${env:SES_ENVIRONMENT}
+    CUSTOM_AWS_REGION: ${env:CUSTOM_AWS_REGION}
+    CUSTOM_AWS_ACCESS_KEY_ID: ${env:CUSTOM_AWS_ACCESS_KEY_ID}
+    CUSTOM_AWS_SECRET_ACCESS_KEY: ${env:CUSTOM_AWS_SECRET_ACCESS_KEY}
+    CLIENT_URL: ${self:custom.clientUrls.${self:provider.stage}}
+    ZEPTO_MAIL_URL: ${env:ZEPTO_MAIL_URL}
+    ZEPTO_MAIL_TOKEN: ${env:ZEPTO_MAIL_TOKEN}
+
+functions:
+  generatePreview:
+    handler: ./src/handler.generatePreview
+    timeout: 900
+    layers:
+      - arn:aws:lambda:<-region->:<-account->:layer:<-layer-name->:<-version->
+
+  generateFinal:
+    handler: ./src/handler.generateFinal
+    timeout: 900
+    layers:
+      - arn:aws:lambda:<-region->:<-account->:layer:<-layer-name->:<-version->
+
+package:
+  patterns:
+    - "!node_modules/**"
+    - "src/**.html"
+
+plugins:
+  - serverless-offline

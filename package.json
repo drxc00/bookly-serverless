@@ -1,0 +1,38 @@
+{
+  "name": "bookly-serverless",
+  "version": "1.0.0",
+  "description": "<!-- title: 'AWS NodeJS Example' description: 'This template demonstrates how to deploy a simple NodeJS function running on AWS Lambda using the Serverless Framework.' layout: Doc framework: v4 platform: AWS language: nodeJS priority: 1 authorLink: 'https://github.com/serverless' authorName: 'Serverless, Inc.' authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4' -->",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "serverless offline start",
+    "invoke-preview": "serverless invoke local --function generatePreview --data tests/data.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@serverless/typescript": "^3.38.0",
+    "@types/aws-lambda": "^8.10.146",
+    "esbuild": "^0.24.2",
+    "serverless-esbuild": "^1.54.6",
+    "serverless-offline": "^14.4.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.717.0",
+    "@aws-sdk/client-ses": "^3.716.0",
+    "@sparticuz/chromium": "^131.0.1",
+    "@types/zepto": "^1.0.36",
+    "mongoose": "^8.9.2",
+    "openai": "^4.77.0",
+    "puppeteer": "^23.11.1",
+    "puppeteer-core": "^23.11.1",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-html": "^16.0.1",
+    "remark-parse": "^11.0.0",
+    "uuid": "^11.0.3",
+    "zeptomail": "^6.1.0"
+  }
+}

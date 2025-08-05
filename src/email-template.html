@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Created</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ffcc02;
+            color: #636363;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #fee718;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>Hi {{email}},</p>
+        <p>We are excited to let you know that your book, titled: {{bookTitle}}, has been successfully created!</p>
+        <p>You can view or download your book by checking your dashboard or by using the link below:</p>
+        <a href="{{bookUrl}}" class="button">View Your Book</a>
+        <a href="{{bookUrlDownload}}" class="button">Download Your Book</a>
+        <p>If you have any questions, feel free to reach out to us.</p>
+        <p>Best regards,<br>The BooklyAI Team</p>
+    </div>
+</body>
+
+</html>
